@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { log } from "console";
+import Image from "next/image";
 
 
 
@@ -41,10 +42,14 @@ export async function UserNav() {
                 <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex items-center gap-x-3">
                     <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5" />
 
-                    <img
-                        src={user?.picture || "https://avatars.githubusercontent.com/u/1500684?v=4"}
+                    <Image
+                        src={user?.picture || "https://i.sstatic.net/l60Hf.png"}
                         alt="Image of the user"
                         className="rounded-full h-8 w-8 hidden lg:block"
+                        priority
+                         width={40}
+  height={40}
+                        
                     />
                 </div>
             </DropdownMenuTrigger>
