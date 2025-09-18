@@ -1,16 +1,14 @@
-import { Button } from "@/components/ui/button";
+import Dashboard from "@/components/Dashboard";
+import MapFilter from "@/components/MapFillter";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { get } from "http";
-import Image from "next/image";
-import { use } from "react";
 
 export default async function Home() {
-  const {getUser} = getKindeServerSession();
-  const user = await getUser();
+  
+
   return (
-    <div>
-      
-      <Button>{user?.given_name}</Button>
+    <div className="container mx-auto px-5 lg:px-10">
+      <MapFilter/>
     </div>
+  
   );
 }

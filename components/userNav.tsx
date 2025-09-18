@@ -3,7 +3,6 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSepara
 import Link from "next/link";
 import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { log } from "console";
 import Image from "next/image";
 
 
@@ -13,49 +12,49 @@ import Image from "next/image";
 export async function UserNav() {
 
 
-    const { getUser } = getKindeServerSession()
-    const user = await getUser();
-    console.log("user", user);
+  const { getUser } = getKindeServerSession()
+  const user = await getUser();
+  console.log("user", user);
 
-    return (
-        // <DropdownMenu>
-        //     <DropdownMenuTrigger>
-        //         <div className="item-center rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex gap-x-3 ">
-        //             <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5"/>
+  return (
+    // <DropdownMenu>
+    //     <DropdownMenuTrigger>
+    //         <div className="item-center rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex gap-x-3 ">
+    //             <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5"/>
 
-        //             <img
-        //                 src="https://avatars.githubusercontent.com/u/1500684?v=4"
-        //                 alt="profile"
-        //                 className="w-8 h-8 rounded-full lg:block hidden "
-        //             />
-        //         </div>
-        //     </DropdownMenuTrigger>
+    //             <img
+    //                 src="https://avatars.githubusercontent.com/u/1500684?v=4"
+    //                 alt="profile"
+    //                 className="w-8 h-8 rounded-full lg:block hidden "
+    //             />
+    //         </div>
+    //     </DropdownMenuTrigger>
 
-        //     <DropdownMenuContent align="end" className="w-[200px]">
-        //         <DropdownMenuItem>Register</DropdownMenuItem>
-        //         <DropdownMenuItem>Login</DropdownMenuItem>
-        //     </DropdownMenuContent>
+    //     <DropdownMenuContent align="end" className="w-[200px]">
+    //         <DropdownMenuItem>Register</DropdownMenuItem>
+    //         <DropdownMenuItem>Login</DropdownMenuItem>
+    //     </DropdownMenuContent>
 
-        // </DropdownMenu>
-        <DropdownMenu>
-            <DropdownMenuTrigger>
-                <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex items-center gap-x-3">
-                    <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5" />
+    // </DropdownMenu>
+    <DropdownMenu>
+      <DropdownMenuTrigger>
+        <div className="rounded-full border px-2 py-2 lg:px-4 lg:py-2 flex items-center gap-x-3">
+          <MenuIcon className="w-6 h-6 lg:w-5 lg:h-5" />
 
-                    <Image
-                        src={user?.picture || "https://i.sstatic.net/l60Hf.png"}
-                        alt="Image of the user"
-                        className="rounded-full h-8 w-8 hidden lg:block"
-                        priority
-                         width={40}
-  height={40}
-                        
-                    />
-                </div>
-            </DropdownMenuTrigger>
+          <Image
+            src={user?.picture || "https://i.sstatic.net/l60Hf.png"}
+            alt="Image of the user"
+            className="rounded-full h-8 w-8 hidden lg:block"
+            priority
+            width={40}
+            height={40}
 
-            <DropdownMenuContent align="end" className="w-[200px]">
-               {user ? (
+          />
+        </div>
+      </DropdownMenuTrigger>
+
+      <DropdownMenuContent align="end" className="w-[200px]">
+        {user ? (
           <>
             <DropdownMenuItem>
               <Link href="/my-homes" className="w-full">
@@ -88,9 +87,9 @@ export async function UserNav() {
           </>
         )}
 
-            </DropdownMenuContent>
-        </DropdownMenu>
-    )
+      </DropdownMenuContent>
+    </DropdownMenu>
+  )
 }
 
 //  { (

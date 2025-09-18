@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "i.sstatic.net", // fallback avatar
       },
+      {
+        protocol: "https",
+        hostname: "a0.muscache.com", // fallback avatar
+      },
     ],
   },
 };
