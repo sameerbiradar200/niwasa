@@ -57,6 +57,11 @@ export async function UserNav() {
         {user ? (
           <>
             <DropdownMenuItem>
+              <Link href="/dashboard" className="w-full">
+                Niwasa Your Home
+              </Link>
+            </DropdownMenuItem>
+              <DropdownMenuItem>
               <Link href="/my-homes" className="w-full">
                 My Listings
               </Link>
